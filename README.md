@@ -1,5 +1,9 @@
 # waimai
 
+# 目标
+
+https://h5.waimai.meituan.com/waimai/mindex/home
+
 
 # 技术栈（初步决定）
  
