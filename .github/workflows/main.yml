@@ -50,6 +50,7 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
           alias-domains: | #Optional
-            waimai-{{BRANCH}}.vercel.app
+            waimai-main.vercel.app
+            waimai-{{PR_NUMBER}}.vercel.app
 
 
