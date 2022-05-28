@@ -39,7 +39,7 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: Build web111
+      - name: Build web
         run: "yarn run buildWeb"
 
       - name: Vercel Action
@@ -50,7 +50,6 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
           alias-domains: | #Optional
-            waimai-main.vercel.app
-            waimai-{{PR_NUMBER}}.vercel.app
+            waimai-sable.vercel.app
 
 
