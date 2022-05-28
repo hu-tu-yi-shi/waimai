@@ -1,5 +1,8 @@
 # waimai
 
+在线预览： https://waimai-sable.vercel.app/
+
+
 # 目标
 
 https://h5.waimai.meituan.com/waimai/mindex/home
