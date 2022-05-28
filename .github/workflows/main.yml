@@ -24,11 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: 🏗 Setup Node
-        uses: actions/setup-node@v2
-        with:
-           node-version: 16.x
-           cache: yarn
+#      - name: 🏗 Setup Node
+#        uses: actions/setup-node@v2
+#        with:
+#           node-version: 16.x
+#           cache: yarn
       - name: 🏗 Setup Expo
         uses: expo/expo-github-action@v7
         with:
