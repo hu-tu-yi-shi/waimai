@@ -35,21 +35,14 @@ jobs:
           expo-version: latest
       - name: 📦 Install dependencies
         run: yarn install
-      - name: 🚀 Build web
+      - name: Build web
         run: expo build:web
-#      - name: 🚀 Deploy web
-#        uses: amondnet/vercel-action@v20 #deploy
-#        with:
-#          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-#          vercel-args: '--prod' #Optional
-#          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-#          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
-#          working-directory: ./web-build
-      - name: deploy to vercel
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+      - name: Vercel Action
+        uses: amondnet/vercel-action@v20.0.1
         with:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+          working-directory: ./web-build
+
 
