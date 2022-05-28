@@ -8,7 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "---自定义---": "--------",
+    "build-web": "expo build:web"
   },
   "jest": {
     "preset": "jest-expo"
