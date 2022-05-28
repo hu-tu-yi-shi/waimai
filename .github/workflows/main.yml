@@ -39,8 +39,8 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: Build web
-        run: "yarn expo build:web"
+      - name: Build web111
+        run: "yarn run buildWeb"
 
       - name: Vercel Action
         uses: amondnet/vercel-action@v20.0.1
