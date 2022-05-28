@@ -45,6 +45,7 @@ jobs:
       - name: Vercel Action
         uses: amondnet/vercel-action@v20.0.1
         with:
+          github-token: ${{ secrets.DEPLOY_TOKEN }} #Optional
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
