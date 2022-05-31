@@ -5,7 +5,7 @@
 
 # 目标
 
-https://h5.waimai.meituan.com/waimai/mindex/home
+美团外卖
 
 
 # 技术栈（初步决定）
