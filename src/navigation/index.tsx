@@ -80,7 +80,7 @@ function BottomTabNavigator() {
         component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<Enum_Screen.Home>) => ({
           title: '首页',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -102,7 +102,7 @@ function BottomTabNavigator() {
         component={VipScreen}
         options={{
           title: '会员',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -110,7 +110,7 @@ function BottomTabNavigator() {
         component={OrderScreen}
         options={{
           title: '订单',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="list-alt" color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -118,7 +118,7 @@ function BottomTabNavigator() {
         component={MyScreen}
         options={{
           title: '我的',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
       />
     </BottomTab.Navigator>
