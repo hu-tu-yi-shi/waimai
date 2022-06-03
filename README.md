@@ -13,7 +13,7 @@
 [react][1]    
 [typescript][2]     
 [react-native][3]   
-[ant design mobile][5]     
+[ant design mobile][5]   (尽可能用rn原生组件）   
 [valtio][4]  状态管理     
  
 [1]: https://reactjs.org/
