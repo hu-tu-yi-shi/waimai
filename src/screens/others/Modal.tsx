@@ -1,16 +1,18 @@
-import { StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { Platform, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@@/components/EditScreenInfo';
 import { Text, View } from '@@/components/Themed';
-import {version} from '../../package.json'
 
-export default function HomeScreen() {
+export default function Modal() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>首页</Text>
+      <Text style={styles.title}>Modal7777</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
-      <Text style={styles.title}>当前版本{version}</Text>
+      <EditScreenInfo path="/screens/ModalScreen.tsx" />
+
+      {/* Use a light status bar on iOS to account for the black space above the modal */}
+      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
 }

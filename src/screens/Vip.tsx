@@ -2,15 +2,20 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import {version} from "../../package.json";
 
-export default function MyScreen() {
+export default function Vip() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>我的</Text>
+        <Text>
+      标题 3个点 icon
+      开通会员
+      精选会员商家
+        附近商家
+        商家列表
+        </Text>
+      <Text style={styles.title}>会员</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
-      <Text style={styles.title}>当前版本{version}</Text>
     </View>
   );
 }

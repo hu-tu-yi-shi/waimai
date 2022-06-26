@@ -5,6 +5,7 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import { RecoilRoot  } from 'recoil';
+import { NativeBaseProvider } from "native-base";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -16,8 +17,10 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <RecoilRoot>
-          <Navigation colorScheme={colorScheme} />
-          <StatusBar />
+          <NativeBaseProvider>
+            <Navigation colorScheme={colorScheme} />
+            <StatusBar />
+          </NativeBaseProvider>
         </RecoilRoot>
       </SafeAreaProvider>
     );

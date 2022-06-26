@@ -12,15 +12,15 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '@@/screens/others/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
+import Modal from '@@/screens/others/Modal';
+import NotFound from '../screens/NotFound';
 
-import HomeScreen from '../screens/HomeScreen';
+import Home from '../screens/Home';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import VipScreen from "../screens/VipScreen";
-import MyScreen from "../screens/MyScreen";
-import OrderScreen from "../screens/OrderScreen";
+import Vip from "../screens/Vip";
+import My from "../screens/My";
+import Order from "../screens/Order";
 
 enum Enum_Screen{
     Home="Home",
@@ -51,9 +51,9 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!---404' }} />
+      <Stack.Screen name="NotFound" component={NotFound} options={{ title: 'Oops!---404' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="Modal" component={Modal} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -76,7 +76,7 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name={Enum_Screen.Home}
-        component={HomeScreen}
+        component={Home}
         options={({ navigation }: RootTabScreenProps<Enum_Screen.Home>) => ({
           title: '首页',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
@@ -98,7 +98,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name={Enum_Screen.Vip}
-        component={VipScreen}
+        component={Vip}
         options={{
           title: '会员',
           tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />,
@@ -106,7 +106,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name={Enum_Screen.Order}
-        component={OrderScreen}
+        component={Order}
         options={{
           title: '订单',
           tabBarIcon: ({ color }) => <TabBarIcon name="list-alt" color={color} />,
@@ -114,7 +114,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name={Enum_Screen.My}
-        component={MyScreen}
+        component={My}
         options={{
           title: '我的',
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
