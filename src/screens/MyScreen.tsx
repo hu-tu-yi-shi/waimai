@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import {version} from "../../package.json";
 
 export default function MyScreen() {
   return (
@@ -9,6 +10,7 @@ export default function MyScreen() {
       <Text style={styles.title}>我的</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <Text style={styles.title}>当前版本{version}</Text>
     </View>
   );
 }
