@@ -15,14 +15,14 @@
 [react-native][3]   
 [ant design mobile][5]   (尽可能用rn原生组件）   
 [recoil][4]  状态管理     
-[pnpm][6]  包管理     
+[pnpm][6]  包管理 (可选) 
  
 [1]: https://reactjs.org/
 [2]: https://www.typescriptlang.org/
 [3]: https://reactnative.dev/
 [4]: https://recoiljs.org/
 [5]: https://mobile.ant.design/zh
-[6]: https://pnpm.io/
+[6]: https://pnpm.io/ 
 
 
 
