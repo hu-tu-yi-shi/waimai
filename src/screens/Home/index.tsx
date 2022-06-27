@@ -1,6 +1,7 @@
 import { StyleSheet, } from 'react-native';
 import {useLayoutEffect , useState} from 'react'
 import { SafeAreaView ,useSafeAreaInsets} from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 import {version} from '../../../package.json'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -19,13 +20,13 @@ import _ShopList from "@@/screens/Home/_ShopList";
 type IProps = NativeStackScreenProps<RootTabParamList, 'Home'>;
 
 
-export default function Home({navigation}:IProps) {
+export   function Home() {
     const { top } = useSafeAreaInsets();
+    const navigation = useNavigation();
 
 
     useLayoutEffect(() => {
         navigation.setOptions({
-
             header:()=>{
                 return <View style={{marginTop:top}}><_Header /></View>
             }
@@ -39,7 +40,7 @@ export default function Home({navigation}:IProps) {
         <_SearchInput />
         <_RecommendKeywords />
         <_NavGrid />
-        <_ShopList />
+        {/*<_ShopList />*/}
 
         <Text>
 

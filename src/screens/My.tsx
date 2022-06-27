@@ -4,7 +4,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import {version} from "../../package.json";
 
-export default function My() {
+export   function My() {
   return (
     <View style={styles.container}>
         <Text>

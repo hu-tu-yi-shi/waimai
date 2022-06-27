@@ -3,32 +3,18 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {FontAwesome} from '@expo/vector-icons';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {DarkTheme, DefaultTheme, NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import {ColorSchemeName} from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import Modal from '@@/screens/others/Modal';
-import NotFound from '../screens/NotFound';
-
-import Home from '../screens/Home';
-import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
+import {Home, Modal, My, NotFound, Notification, Order, SelectLocation, Vip} from '@@/screens';
+import {RootStackParamList, RootTabParamList} from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import Vip from "../screens/Vip";
-import My from "../screens/My";
-import Order from "../screens/Order";
-
-enum Enum_Screen{
-    Home="Home",
-    Vip="Vip",
-    Order="Order",
-    My="My",
-}
-
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -51,7 +37,11 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="NotFound" component={NotFound} options={{ title: 'Oops!---404' }} />
+      <Stack.Screen name="NotFound" component={NotFound}   />
+      <Stack.Screen name="Notification" component={Notification}  />
+      <Stack.Screen name="SelectLocation" component={SelectLocation}  />
+
+
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={Modal} />
       </Stack.Group>
@@ -70,34 +60,20 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName={Enum_Screen.Home}
+      initialRouteName={"Home"}
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name={Enum_Screen.Home}
+        name={"Home"}
         component={Home}
-        options={({ navigation }: RootTabScreenProps<Enum_Screen.Home>) => ({
+        options={{
           title: '首页',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
+        }}
       />
       <BottomTab.Screen
-        name={Enum_Screen.Vip}
+        name={"Vip"}
         component={Vip}
         options={{
           title: '会员',
@@ -105,7 +81,7 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name={Enum_Screen.Order}
+        name={"Order"}
         component={Order}
         options={{
           title: '订单',
@@ -113,7 +89,7 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name={Enum_Screen.My}
+        name={"My"}
         component={My}
         options={{
           title: '我的',
