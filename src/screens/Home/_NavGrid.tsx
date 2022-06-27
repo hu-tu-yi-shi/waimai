@@ -42,7 +42,7 @@ const _NavGrid = () => {
           <Box style={styles.container}>
 
               {BTNS.map(item=>{
-                  return <Box style={styles.item} ><_IconButton item={item}/></Box>
+                  return <Box key={item} style={styles.item} ><_IconButton item={item}/></Box>
               })}
 
           </Box>
