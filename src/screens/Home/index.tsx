@@ -1,13 +1,13 @@
 import { StyleSheet, } from 'react-native';
 import {useLayoutEffect , useState} from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView ,useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {version} from '../../../package.json'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootTabParamList} from "@@/types";
 
  import { Button,Text,View } from "native-base";
- import { IconButton, Icon, Box, Center, NativeBaseProvider,ScrollView, } from "native-base";
+ import { IconButton, Icon, Box, Center, NativeBaseProvider,ScrollView } from "native-base";
 import { Entypo } from "@expo/vector-icons";
 import { Flex, Spacer } from "native-base";
 import { Ionicons } from '@expo/vector-icons';
@@ -20,20 +20,22 @@ type IProps = NativeStackScreenProps<RootTabParamList, 'Home'>;
 
 
 export default function Home({navigation}:IProps) {
+    const { top } = useSafeAreaInsets();
 
 
     useLayoutEffect(() => {
         navigation.setOptions({
+
             header:()=>{
-                return <_Header />
+                return <View style={{marginTop:top}}><_Header /></View>
             }
         });
     }, [navigation]);
 
 
   return (
-    <View style={styles.container}>
-        <ScrollView >
+    <View style={styles.container}  >
+
         <_SearchInput />
         <_RecommendKeywords />
         <_NavGrid />
@@ -50,7 +52,7 @@ export default function Home({navigation}:IProps) {
 
 
        <Text style={styles.title}>当前版本{version}</Text>
-        </ScrollView>
+
     </View>
   );
 }

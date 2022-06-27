@@ -1,5 +1,5 @@
 import React from 'react';
-import {Flex, IconButton, Input,Button,Icon, Box, View, Image,FlatList} from "native-base";
+import {Flex, IconButton, Input,Button,Icon, Box, View, Image,FlatList,ScrollView} from "native-base";
 import {Ionicons} from "@expo/vector-icons";
 
 
@@ -45,12 +45,13 @@ const _ShopList = () => {
     return (
             <Flex width={"100%"}  >
                 <_ShopTabs />
-
+                <ScrollView>
 
 
                 <FlatList  data={data} renderItem={({item})=>{
                     return <_ShopItem key={item} item={item}/>
                 }}/>
+                </ScrollView>
             </Flex>
 
     )
